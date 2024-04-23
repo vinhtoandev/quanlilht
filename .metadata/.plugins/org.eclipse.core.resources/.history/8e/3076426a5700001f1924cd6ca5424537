@@ -1,0 +1,16 @@
+package Test;
+
+import Controller.GiaoVienConTroler;
+import DAO.GiaovienDAO;
+import DAO.LopHocDAO;
+import Model.Lophoc;
+
+public class ktconrtroller {
+	public static void main(String[] args) {
+		Lophoc lh = new Lophoc("432", "dasd", 4, "32e", "ewaed", "fasd", "asd", "das");
+		LopHocDAO.getInstant().insert(lh);
+				
+	
+	}
+
+}

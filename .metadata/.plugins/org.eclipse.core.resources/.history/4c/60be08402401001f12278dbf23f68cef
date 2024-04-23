@@ -1,0 +1,61 @@
+package Controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+
+import javax.swing.table.DefaultTableModel;
+
+import DAO.LopHocDAO;
+import Model.Giaovien;
+import Model.Lophoc;
+import View.AdminView;
+
+public class LopHocConTroller implements ActionListener, MouseListener{
+	private AdminView adminview;
+	
+	public LopHocConTroller(AdminView adminview) {
+		this.adminview = adminview;
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == adminview.btnHienThiLH) {
+			ArrayList<Lophoc> list = LopHocDAO.getInstant().selectAll();
+			DefaultTableModel model = (DefaultTableModel) adminview.tableLH.getModel();
+			model.setRowCount(0);
+			for(Lophoc lh : list) {		
+				String[] row = {lh.getMaLH(), lh.getTenLH(), String.valueOf(lh.getSiSo()), lh.getThoigianHoc(), lh.getNgayBatDau(), lh.getNgayKetThuc(), lh.getMaMH(), lh.getMaGV()};
+				model.addRow(row);
+			}
+			
+		}
+	}
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

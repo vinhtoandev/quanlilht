@@ -1,0 +1,11 @@
+package Test;
+
+import Controller.GiaoVienConTroler;
+
+public class ktconrtroller {
+	public static void main(String[] args) {
+		GiaoVienConTroler gvcl = new GiaoVienConTroler();
+		System.out.println(gvcl.checkExistGV("100"));
+	}
+
+}

@@ -1,0 +1,21 @@
+package Controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import View.AdminView;
+
+public class HocVienConTroler implements ActionListener{
+	private AdminView adminview;
+	
+	public HocVienConTroler(AdminView adminview) {
+		this.adminview = adminview;
+	}
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == adminview.btnHienThiHV) {
+			System.out.println("afcsa");
+		}
+		
+	}
+
+}

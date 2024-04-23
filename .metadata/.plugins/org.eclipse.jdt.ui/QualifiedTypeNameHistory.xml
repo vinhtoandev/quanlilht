@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.awt.Dimension"/>
+    <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
+    <fullyQualifiedTypeName name="View.Main1"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="Controller.HocVienConTroler"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="Controller.GiaoVienConTroler"/>
+    <fullyQualifiedTypeName name="Model.Hocvien"/>
+    <fullyQualifiedTypeName name="Model.Giaovien"/>
+    <fullyQualifiedTypeName name="DAO.DAOInterface"/>
+    <fullyQualifiedTypeName name="DAO.DangKiDAO"/>
+    <fullyQualifiedTypeName name="Model.DangKi"/>
+    <fullyQualifiedTypeName name="DAO.GiaovienDAO"/>
+    <fullyQualifiedTypeName name="View.AdminView"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+    <fullyQualifiedTypeName name="Controller.LopHocConTroller"/>
+    <fullyQualifiedTypeName name="java.awt.event.MouseListener"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
+    <fullyQualifiedTypeName name="Model.Lophoc"/>
+    <fullyQualifiedTypeName name="DAO.LopHocDAO"/>
+</qualifiedTypeNameHistroy>

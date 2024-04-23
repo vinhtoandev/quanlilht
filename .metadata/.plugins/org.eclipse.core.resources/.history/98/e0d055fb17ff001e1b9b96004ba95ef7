@@ -1,0 +1,20 @@
+package Controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import View.AdminView;
+
+public class GiaoVienConTroler implements ActionListener{
+	private AdminView adminview;
+	
+	public GiaoVienConTroler(AdminView adminview) {
+		this.adminview = adminview;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.out.println("dasd");
+		
+	}
+}

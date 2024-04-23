@@ -1,0 +1,59 @@
+package Controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.table.DefaultTableModel;
+
+import DAO.GiaovienDAO;
+import Model.Giaovien;
+import View.AdminView;
+
+
+public class GiaoVienConTroler implements ActionListener{
+	private AdminView adminview;
+	
+	public GiaoVienConTroler(AdminView adminview) {
+		this.adminview = adminview;
+	}
+	
+	public Giaovien getDataViewGV() {
+		String maGV = adminview.txtNhapMaGV.getText();
+		String nameGV = adminview.txtNhapTenGV.getText();
+		String namSinh = adminview.txtNhapNamSinhGV.getText();
+		Boolean gioiTinh;
+		if(adminview.rdbtnMaleGV.isSelected()) {
+			gioiTinh = true;
+		}
+		gioiTinh = false;
+		String chuyenMon = adminview.txtNhapChuyenMonGV.getText();
+		String trinhDo = adminview.txtNhapTrinhDoGV.getText();
+		int SDT = Integer.parseInt(adminview.txtNhapSDTGV.getText()) ;
+		Giaovien gv = new Giaovien(maGV, nameGV, namSinh, gioiTinh, chuyenMon, trinhDo, SDT);
+		
+		return gv;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource() == adminview.btnHienThiGV) {
+			ArrayList<Giaovien> list = GiaovienDAO.getInstance().selectAll();		
+			DefaultTableModel model = (DefaultTableModel) adminview.tableGV.getModel();
+			for(Giaovien gv : list) {		
+				String gender ;
+				if(gv.getGioiTinh() == true) gender = "Nam";
+				else gender = "Nu";
+				String[] row = {gv.getMaGV(), gv.getName(), gv.getNamSinh(), gender, gv.getChuyenMon(), gv.getTrinhDo(), String.valueOf(gv.getSDT())};
+				model.addRow(row);
+			}
+		}
+		
+		if(e.getSource() == adminview.btnThemGV) {
+			GiaovienDAO.getInstance().insert(getDataViewGV());
+			adminview.btnHienThiGV.doClick();
+		}
+	}
+}
+

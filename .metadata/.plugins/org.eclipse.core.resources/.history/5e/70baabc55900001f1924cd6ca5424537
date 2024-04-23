@@ -1,0 +1,94 @@
+package DAO;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import Database.JDBCUtil;
+import Model.Lophoc;
+
+public class LopHocDAO implements DAOInterface<Lophoc>{
+
+	public static LopHocDAO getInstant() {
+		return new LopHocDAO();
+	}
+	@Override
+	public int insert(Lophoc t) {
+		int ketqua = 0;
+		try {
+			Connection cnn = JDBCUtil.getConnection();
+			
+			java.sql.Statement st = cnn.createStatement();
+			String sql = "INSERT INTO lophoc (maLH, tenLop, siSo, thoiGianHoc, ngayBatDau, ngayKetThuc, maMH, maGV)"
+					+ " values('" + t.getMaLH() +"' ,'" + t.getTenLH() +"' ," + t.getSiSo() + " ,'" + t.getThoigianHoc() + "', '" +
+					 t.getNgayBatDau() + "' ,'" + t.getNgayKetThuc() + "' ,'" + t.getMaMH() + "', '" + t.getMaGV() + "')";
+			System.out.println(sql);
+			ketqua = st.executeUpdate(sql);
+			
+			
+			JDBCUtil.closeConnection(cnn);
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+			
+		return ketqua;
+	}
+
+	@Override
+	public int update(Lophoc t) {
+		int ketqua = 0;
+		try {
+			Connection cnn = JDBCUtil.getConnection();
+			
+			java.sql.Statement st = cnn.createStatement();
+			
+			String sql = "UPDATE lophoc set "
+					+ "maLH = '" + t.getMaLH() + "' ,"
+					+ "tenLop = '" + t.getTenLH() + "' ," 
+					+ "siSo = " + t.getSiSo() + " ,"
+					+ "thoiGianHoc = '" + t.getThoigianHoc() + "' ,"
+					+ "ngayBatDau = '" + t.getNgayBatDau() + "' ,"
+					+ "ngayKetThuc = '" + t.getNgayKetThuc() + "' ,"
+					+ "maMH = '" + t.getMaMH() + "' ,"
+					+ "maGV = '" + t.getMaGV() + "' where maLH = '" + t.getMaLH() + "'";
+			
+			System.out.println(sql);
+			ketqua = st.executeUpdate(sql);
+			
+			JDBCUtil.closeConnection(cnn);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return ketqua;
+	}
+
+	@Override
+	public int delete(Lophoc t) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ArrayList<Lophoc> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Lophoc selectById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Lophoc> selectByCondition(String condition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
+
+}

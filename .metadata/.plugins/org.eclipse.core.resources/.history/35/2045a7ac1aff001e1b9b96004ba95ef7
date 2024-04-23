@@ -1,0 +1,30 @@
+package Controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import DAO.GiaovienDAO;
+import Model.Giaovien;
+import View.AdminView;
+
+
+public class GiaoVienConTroler implements ActionListener{
+	private AdminView adminview;
+	
+	public GiaoVienConTroler(AdminView adminview) {
+		this.adminview = adminview;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if(e.getSource() == adminview.btnGiaoVien) {
+			ArrayList<Giaovien> list = GiaovienDAO.getInstance().selectAll();
+			for(Giaovien gv : list) {
+				System.out.println(gv.toString());
+			}
+		}
+		
+	}
+}
